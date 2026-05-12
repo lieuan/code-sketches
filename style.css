@@ -1,5 +1,65 @@
 body{
     font-family: 'Courier New', Courier, monospace;
     background-color: black;
+
+    font-weight: 100;
     color: aliceblue;
+}
+
+
+
+.scrolling-text {
+    width: 100%;
+    overflow: hidden; 
+    white-space: nowrap;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    text-shadow: 0 0 0.5em #000000;
+}
+
+/* Texte animé */
+.scrolling-text span {
+    display: inline-block;
+    padding-left: 100%; 
+    animation: scroll-text 10s linear infinite; 
+}
+
+/* Anim du texte */
+@keyframes scroll-text {
+    from {
+        transform: translateX(20%); 
+    }
+    to {
+        transform: translateX(-100%); 
+    }
+}
+
+
+
+
+* { font-weight: 100;}
+
+img{ max-width: 100%; }
+
+/* navigation */
+nav ul { list-style-type: none; padding: 0;}
+nav li { margin-top: 1rem; }
+
+a { color: inherit;}
+
+a {
+    text-decoration-style: wavy;
+    text-decoration-thickness: 2px ;
+    text-decoration-color: red ;
+    text-decoration-skip-ink: none ;
+    text-underline-offset: 0.25em ;
+}
+a:hover { background: rgb(255, 255, 255); color: rgb(0, 0, 0);}
+
+/* gallery */
+.gallery{
+ display: grid;
+ gap: 1rem;
+ grid-template-columns: repeat(auto-fill, minmax(min ( 200px, 100%), 1fr));
 }

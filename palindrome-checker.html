@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is palindrome?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="ProjectNav"><a href="index.html"></a>Home</div>
+
+    <h1>We can checking teh words!</h1>
+    <div id="UI">
+        <input type="text" name="" id="inputString" placeholder="back words?">
+        <button id="theButton">Check</button>
+        <p id="feedback">Le feedback ici...</p>
+    </div>
+
+    <script>
+        console.clear();
+        console.log("bonjour!");
+
+        const theFeedback = document.getElementById("feedback");
+        theFeedback.innerHTML = "bla bla chaton.";
+
+        const theButton = document.getElementById("theButton");
+        theButton.addEventListener("click", checkTheText);
+
+        function checkTheText() {
+            console.log("we are checking the texts !");
+
+            const theInput = document.getElementById("inputString");
+            console.log(theInput.value);
+
+            checkPalindrome(theInput.value);
+
+            if (theInput.value == "chaton") {
+                console.log("yes.");
+                theFeedback.innerHTML = "Error: input is a kitten.";
+            } 
+            else if ( theInput.value == ""){
+                theFeedback.innerHTML = " Fill in the form dumbass"
+
+
+            }
+            else if (checkPalindrome(theInput.value) == true) {
+                console.log("yes.");
+                theFeedback.innerHTML = "Oui!";
+            } 
+            
+            
+            else {
+                console.log("no.");
+                theFeedback.innerHTML = "No.";
+            }
+
+            theInput.value = ""; //vider le cas après l'use
+        }
+
+        // checkTheText
+
+        function checkPalindrome(str) {
+          console.log("palindrome check: " + str);
+
+str= str.replaceAll(" ", "");
+
+            let theLetters = str.split("");
+            let verlan = theLetters.reverse();
+            let rts = verlan.join("");
+
+            console.log("rts ="+ rts);
+
+            if (str == rts) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

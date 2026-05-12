@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web dev - color flipper</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(123, 255, 248);
+        }
+    </style>
+</head>
+<body>
+    <h1> We can flipping teh color!</h1>
+
+    <button onClick="setColor('Papayawhip')" >
+        Papaya Whip
+    </button>
+    <button onClick="setColor('Peachpuff')">Peach Puff</button>
+    <button onClick="setColor('Powderblue')">Powder Blue</button>
+
+    <button onClick="randomColor()">Random</button>
+
+    <script>
+        const body = document.getElementsByTagName("body")[0];
+        //body.style.backgroundColor = "black" -> 1er façcon
+
+        setColor("#ddd"); 
+
+        function setColor(name){
+            body.style.backgroundColor = name;
+        }
+        //-> 2er façon
+
+        function randomColor(){
+            console.log("Hi!");
+            let R= Math.round( Math.random() * 255 );
+            let V= Math.round( Math.random() * 255 );
+            let B= Math.round( Math.random() * 255 );
+            
+                    // plus stupide et chiant
+           let theColor = "rgb(" + R + "," + V + "," + B + ")";
+
+           //plus simple
+
+           theColor = `rgb(${R}, ${V}, ${B})`;
+            body.style.backgroundColor = theColor;
+
+            
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,17 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 
-    <script src="p5.js"></script>
+    <!-- <script src="p5.js"></script> -->
     
+
 </head>
+
 <body>
+
+     <div class="scrolling-text">
+        <span><b>I'm_dead_inside_but_i'm_still_here_ewwww:)))</b></span>
+    </div>
+
+
+    
     <h1>I want to die - i love coding</h1>
     <h3> i'm dying... </h3>
-    <script src="circles.js"></script>
+
+
+
+    <div class="gallery">
+        <a href="circles.html">
+            <img src="circles.png" alt="">
+        </a>
+
+         <a href="bouncy.html">
+            <img src="bouncy.png" alt="">
+        </a>
+
+    </div>
+
+
+
+
+    <style>
+ body { margin: 0; padding: 1rem; font-family: system-ui, sans-serif; }
+ .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+ .gallery a { display: block; }
+ .gallery img { width: 100%; height: auto; display: block; }
+
+ .lb { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; z-index: 9999; }
+ .lb.open { display: block; }
+ .lb iframe { position: absolute; top: 5vh; left: 5vw; width: 90vw; height: 90vh; border: 0; background: #fff; }
+ .lb button { position: absolute; top: 1rem; right: 1rem; width: 3rem; height: 3rem; font-size: 1.5rem; background: #fff; border: 0; cursor: pointer; }
+</style>
+
+<div class="lb" id="lb" aria-hidden="true">
+ <button type="button" aria-label="Fermer">×</button>
+ <iframe allow="camera; microphone; autoplay"></iframe>
+</div>
+
+<script>
+ function makeLightbox(){
+  const lb = document.getElementById('lb');
+  const frame = lb.querySelector('iframe');
+  const close = lb.querySelector('button');
+
+  const open = url => { frame.src = url; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); };
+  const shut = () => { frame.src = 'about:blank'; lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); };
+
+  document.querySelectorAll('.gallery a').forEach(a => {
+   a.addEventListener('click', e => { e.preventDefault(); open(a.href); });
+  });
+  close.addEventListener('click', shut);
+  lb.addEventListener('click', e => { if (e.target === lb) shut(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) shut(); });
+ }
+ makeLightbox();
+</script>
+
+
+
+
+
+
+    <nav>
+        <ul><a href="color-flipper.html">Color Flipper</a></ul>
+        <ul><a href="palindrome-checker.html">Palindrome Checker</a></ul>
+        <ul><a href="oblique-stategies.html">Palindrome Checker</a></ul>
+
+    </nav>
 </body>
+
 </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oblique-stategies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+      <div id="ProjectNav"><a href="index.html">Home</a></div>
+
+      <h1>Quand je suis en blocage de faire les illustrations. Je dois utiliser ce</h1>
+    <h1 id="Strategy">...</h1>
+
+
+
+    <script src="oblique-stratiges.js"></script>
+
+    <script>
+
+        window.onload = function(){
+            var strategy = document.getElementById("Strategy");
+            strategy.innerHTML = "Hello,";
+
+         
+
+            //if( Math.random() > 0.5 ){
+              //  strategy.innerHTML = "World.";
+            //}
+
+
+
+              // const Strategies = [
+                //"Chaton",
+           //     "Loutre",
+             //   "Chevre",
+               // "Platypus"
+            //];
+
+            
+
+
+
+            let total = Strategies.length;
+            let rando = Math.random();
+            let hasar = rando * total;
+            let choix = Math.floor( hasar );
+
+            strategy.innerHTML = Strategies[ Math.floor (Math.random() * Strategies.length) ];
+        }
+
+
+
+    </script>
+
+   <style>
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+#Strategy {
+    width: 20ch;
+    font-size: clamp(1rem, 4vv, 12rem);
+    font-weight: 400;
+    padding: 1rem;
+    /* align-content: center; */
+    aspect-ratio: 16/9;
+    outline: 1px solid #00eaff;
+
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.3rem 1rem rgb(11, 243, 255);
+}
+
+button{
+    width: 20ch;
+    font-size: clamp(1rem, 4vv, 12rem);
+    font-weight: 400;
+    padding: 1rem;
+    /* align-content: center; */
+    outline: 1px solid #00eaff;
+
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.3rem 1rem rgb(11, 243, 255);
+    background-color: black;
+    color: #00eaff;
+    margin-top: 20px;
+}
+button:hover {
+    color: black;
+    background-color: #00eaff;
+
+
+   
+
+}
+
+
+</style>
+
+
+<button onclick="window.location.reload()">⌘&thinsp;R</button>
+</body>
+</html>
