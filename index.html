@@ -8,72 +8,158 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- <script src="p5.js"></script> -->
-    
+
 
 </head>
 
 <body>
 
-     <div class="scrolling-text">
+    <div class="scrolling-text">
         <span><b>I'm_dead_inside_but_i'm_still_here_ewwww:)))</b></span>
     </div>
 
 
-    
+
     <h1>I want to die - i love coding</h1>
     <h3> i'm dying... </h3>
 
 
 
     <div class="gallery">
-        <a href="circles.html">
-            <img src="circles.png" alt="">
+        <a href="circles/circles.html">
+            <img src="circles/circles.png" alt="">
         </a>
 
-         <a href="bouncy.html">
-            <img src="bouncy.png" alt="">
+        <a href="bouncy/bouncy.html">
+            <img src="bouncy/bouncy.png" alt="">
         </a>
+
+        <a href="checker/checker.html">
+            <img src="checker/checker.png" alt="">
+        </a>
+
+        <a href="pixel-mood/pixel-mood.html">
+            <img src="pixel-mood/pixel-mood.png" alt="">
+        </a>
+
+          <a href="chaossss/chaossss.html">
+            <img src="chaossss/chaossss.png" alt="">
+        </a>
+
+
+      <a href="color and color/color and color.html">
+            <img src="color and color/color and color.png" alt="">
+        </a>
+
+
+     <a href="loop1/loop1.html">
+            <img src="loop1/loop1.png" alt="">
+        </a>
+
+
+   <a href="smile/smile.html">
+            <img src="smile/smile.png" alt="">
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
 
 
-
+<!-- comment faire le galery -->
 
     <style>
- body { margin: 0; padding: 1rem; font-family: system-ui, sans-serif; }
- .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
- .gallery a { display: block; }
- .gallery img { width: 100%; height: auto; display: block; }
+        body {
+            margin: 0;
+            padding: 1rem;
+            font-family: system-ui, sans-serif;
+        }
 
- .lb { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; z-index: 9999; }
- .lb.open { display: block; }
- .lb iframe { position: absolute; top: 5vh; left: 5vw; width: 90vw; height: 90vh; border: 0; background: #fff; }
- .lb button { position: absolute; top: 1rem; right: 1rem; width: 3rem; height: 3rem; font-size: 1.5rem; background: #fff; border: 0; cursor: pointer; }
-</style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+        }
 
-<div class="lb" id="lb" aria-hidden="true">
- <button type="button" aria-label="Fermer">×</button>
- <iframe allow="camera; microphone; autoplay"></iframe>
-</div>
+        .gallery a {
+            display: block;
+        }
 
-<script>
- function makeLightbox(){
-  const lb = document.getElementById('lb');
-  const frame = lb.querySelector('iframe');
-  const close = lb.querySelector('button');
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  const open = url => { frame.src = url; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); };
-  const shut = () => { frame.src = 'about:blank'; lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); };
+        .lb {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .85);
+            display: none;
+            z-index: 9999;
+        }
 
-  document.querySelectorAll('.gallery a').forEach(a => {
-   a.addEventListener('click', e => { e.preventDefault(); open(a.href); });
-  });
-  close.addEventListener('click', shut);
-  lb.addEventListener('click', e => { if (e.target === lb) shut(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) shut(); });
- }
- makeLightbox();
-</script>
+        .lb.open {
+            display: block;
+        }
+
+        .lb iframe {
+            position: absolute;
+            top: 5vh;
+            left: 5vw;
+            width: 90vw;
+            height: 90vh;
+            border: 0;
+            background: #ffffff;
+        }
+
+        .lb button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 3rem;
+            height: 3rem;
+            font-size: 1.5rem;
+            background: #ffffff;
+            border: 0;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="lb" id="lb" aria-hidden="true">
+        <button type="button" aria-label="Fermer">×</button>
+        <iframe allow="camera; microphone; autoplay"></iframe>
+    </div>
+
+    <script>
+        function makeLightbox() {
+            const lb = document.getElementById('lb');
+            const frame = lb.querySelector('iframe');
+            const close = lb.querySelector('button');
+
+            const open = url => { frame.src = url; lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false'); };
+            const shut = () => { frame.src = 'about:blank'; lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); };
+
+            document.querySelectorAll('.gallery a').forEach(a => {
+                a.addEventListener('click', e => { e.preventDefault(); open(a.href); });
+            });
+            close.addEventListener('click', shut);
+            lb.addEventListener('click', e => { if (e.target === lb) shut(); });
+            document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) shut(); });
+        }
+        makeLightbox();
+    </script>
 
 
 
