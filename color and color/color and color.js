@@ -32,7 +32,7 @@ class Panneau {
 let p1, p2, p3, p4;
 
 function setup() {
-  createCanvas(600, 600);
+    createCanvas(windowWidth, windowHeight);
   noLoop();
 
   // color 1 rect haut gacuhe

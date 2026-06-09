@@ -21,45 +21,115 @@
 
 
     <h1>I want to die - i love coding</h1>
-    <h3> i'm dying... </h3>
+    <h3> ID432-Truong An Liêu <br>Dév Interface 3 Javascript (Cater)</h3>
+
 
 
 
     <div class="gallery">
         <a href="circles/circles.html">
-            <img src="circles/circles.png" alt="">
+            <img src="circles/circles.png" alt=""><span>Circles</span>
         </a>
 
         <a href="bouncy/bouncy.html">
             <img src="bouncy/bouncy.png" alt="">
+            <span>Bouncy</span>
         </a>
 
         <a href="checker/checker.html">
             <img src="checker/checker.png" alt="">
+            <span>Checker</span>
         </a>
 
         <a href="pixel-mood/pixel-mood.html">
             <img src="pixel-mood/pixel-mood.png" alt="">
+            <span>Pixel mood</span>
         </a>
 
-          <a href="chaossss/chaossss.html">
+        <a href="chaossss/chaossss.html">
             <img src="chaossss/chaossss.png" alt="">
+            <span>Chaossss</span>
         </a>
 
 
-      <a href="color and color/color and color.html">
+        <a href="color and color/color and color.html">
             <img src="color and color/color and color.png" alt="">
+                        <span>Color and color</span>
+
         </a>
 
 
-     <a href="loop1/loop1.html">
+        <a href="loop1/loop1.html">
             <img src="loop1/loop1.png" alt="">
+            <span>Loop</span>
         </a>
 
 
-   <a href="smile/smile.html">
+        <a href="smile/smile.html">
             <img src="smile/smile.png" alt="">
+                 <span>Smile</span>
         </a>
+
+        <a href="tone sur tone/tone sur tone.html">
+            <img src="tone sur tone/tone sur tone.png" alt="">
+                 <span>Tone sur tone</span>
+        </a>
+
+
+        <a href="coeur/coeur.html">
+            <img src="coeur/coeur.png" alt="">
+                 <span>Coeur</span>
+        </a>
+
+
+
+        <a href="bad photoshop/bad photoshop.html">
+            <img src="bad photoshop/bad photoshop.png" alt="">
+                 <span>Bad photoshop</span>
+        </a>
+
+        <a href="2 lignes de points/2 lignes de points.html">
+            <img src="2 lignes de points/2 lignes de points.png" alt="">
+                 <span>"2 lignes de points"</span>
+        </a>
+
+
+
+        <a href="Wave 2d fake 3d/Wave 2d fake 3d.html">
+            <img src="Wave 2d fake 3d/Wave 2d fake 3d.png" alt="">     <span>Wave 2d fake 3d</span>
+        </a>
+
+
+        <a href="couleursss/couleursss.html">
+            <img src="couleursss/couleursss.png" alt="">
+                 <span>Couleursss</span>
+        </a>
+
+
+        <a href="new class contructor/new class contructor.html">
+            <img src="new class contructor/new class contructor.png" alt="">
+                 <span>New class contructor</span>
+        </a>
+
+          <a href="Black and White/black and white.html">
+            <img src="Black and White/black and white.png" alt="">     <span>Black and white</span>
+        </a>
+
+
+             <a href="Fish fin/fish fin.html">
+            <img src="Fish fin/fish fin.png" alt="">     <span>Fish fin</span>
+        </a>
+
+
+
+              <a href="Diamond/diamond.html">
+            <img src="Diamond/Diamond.png" alt="">     <span>Diamond</span>
+        </a>
+
+
+
+
+
 
 
 
@@ -77,9 +147,9 @@
     </div>
 
 
-<!-- comment faire le galery -->
+    <!-- comment faire le galery -->
 
-    <style>
+    <!-- <style>
         body {
             margin: 0;
             padding: 1rem;
@@ -135,6 +205,181 @@
             border: 0;
             cursor: pointer;
         }
+    </style> -->
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #0d0d0d;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 5rem);
+            margin-bottom: 0;
+        }
+
+        h3 {
+            opacity: .6;
+            margin-bottom: 50px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .gallery a {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            display: block;
+            background: #111;
+            aspect-ratio: 1;
+            text-decoration: none;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition:
+                transform .6s ease,
+                filter .6s ease;
+
+            filter: grayscale(20%);
+        }
+
+        .gallery a:hover img {
+            transform: scale(1.08);
+            filter: grayscale(0%);
+        }
+
+        .gallery a::after {
+            content: "open project";
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: rgba(0, 0, 0, .45);
+
+            opacity: 0;
+            transition: .4s;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .gallery a:hover::after {
+            opacity: 1;
+        }
+
+
+        /* lightbox */
+        .lb {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .85);
+            display: none;
+            z-index: 9999;
+        }
+
+        .lb.open {
+            display: block;
+        }
+
+        .lb iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            width: 92vw;
+            height: 92vh;
+
+            transform: translate(-50%, -50%);
+
+            border: none;
+            border-radius: 24px;
+
+            background: #111;
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.08);
+
+            overflow: hidden;
+             z-index: 1; 
+        }
+
+        /* button */
+        .lb button {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+
+            width: 52px;
+            height: 52px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, .12);
+            color: white;
+
+            font-size: 28px;
+            cursor: pointer;
+
+            backdrop-filter: blur(10px);
+
+            transition:
+                transform .25s,
+                background .25s;
+                 z-index: 99999; 
+        }
+
+        .lb button:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, .25);
+        }
+
+
+        /* effect floating */
+        .gallery a {
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .gallery a:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, .4);
+        }
+
+
+
+
+
+
+        /* //nom de projet */
+        .gallery span {
+            position: absolute;
+            left: 15px;
+            bottom: 15px;
+
+            color: white;
+            font-size: .9rem;
+            font-weight: bold;
+
+            z-index: 2;
+        }
     </style>
 
     <div class="lb" id="lb" aria-hidden="true">
@@ -169,9 +414,22 @@
     <nav>
         <ul><a href="color-flipper.html">Color Flipper</a></ul>
         <ul><a href="palindrome-checker.html">Palindrome Checker</a></ul>
-        <ul><a href="oblique-stategies.html">Palindrome Checker</a></ul>
+        <ul><a href="oblique-stategies.html">Oblique Strategie</a></ul>
 
     </nav>
+    <div class="scrolling-text">
+        <span><b>I'm_dead_inside_but_i'm_still_here_ewwww:)))</b></span>
+
+    </div>
+    <style>
+        .scrolling-text {
+            background-color: rgb(255, 255, 255);
+
+            color: black;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
 </body>
 
 </html>

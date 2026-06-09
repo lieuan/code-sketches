@@ -1,6 +1,5 @@
 function setup() {
-    createCanvas(400, 400);
-    background(220);
+    createCanvas(windowWidth, windowHeight);
 
     for(let y = 0; y < 8; y++){
         for(let x = 0; x < 8; x++){

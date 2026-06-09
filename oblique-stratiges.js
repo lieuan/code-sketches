@@ -149,3 +149,6 @@ const Strategies = [
 	"You don’t have to be ashamed of using your own ideas",
 	"Your mistake was a hidden intention" // no comma after the last one!
 ];
+
+
+//C'est très utile comme outile pour les blocages :))))

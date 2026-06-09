@@ -64,3 +64,6 @@ ellipse(0, 0, 70, 45);
   strokeWeight(4);
   arc(200, 280, 80, 50, 0, 200);
 }
+
+
+// source : j'ai trouvé un tuto sur p5js
