@@ -20,7 +20,7 @@ function draw() {
       let baseX = x * espX;
       let baseY = y * espY;
       
-      // khoảng cách từ chuột đến ellipse này
+      // distance ellipse 
       let d = dist(mouseX, mouseY, baseX, baseY);
       
       // shake it upppp
